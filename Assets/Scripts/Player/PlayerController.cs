@@ -15,6 +15,10 @@ public class PlayerController : MonoBehaviour {
 
     public static bool IsInputBlocked = false;
 
+    public void SetInputBlocked(bool blocked) {
+        IsInputBlocked = blocked;
+    }
+
     private void Awake() {
         _rb = GetComponent<Rigidbody2D>();
         _cam = Camera.main;
@@ -36,19 +40,29 @@ public class PlayerController : MonoBehaviour {
         _targetPosition = transform.position;
     }
 
-    private void Update() {
+    private void Update()
+    {
         if (IsInputBlocked)
             return;
 
-        if (_clickAction != null && _clickAction.WasPressedThisFrame()) {
+        MouseMovement();
+        KeyboardMovement();
+    }
+
+    private void MouseMovement()
+    {
+        if (_clickAction != null && _clickAction.WasPressedThisFrame())
+        {
             var mouseScreenPos = _pointAction.ReadValue<Vector2>();
             Vector2 mouseWorldPos = _cam.ScreenToWorldPoint(mouseScreenPos);
 
             var hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
 
-            if (hit.collider) {
+            if (hit.collider)
+            {
                 var interactable = hit.collider.GetComponent<InteractableObject>();
-                if (interactable) {
+                if (interactable)
+                {
                     interactable.OnClick();
                     return;
                 }
@@ -64,5 +78,16 @@ public class PlayerController : MonoBehaviour {
 
         if (Vector2.Distance(transform.position, _targetPosition) < 0.05f)
             _isMoving = false;
+    }
+    
+    private void KeyboardMovement()
+    {
+        float moveX = Input.GetAxisRaw("Horizontal");
+        // no jump
+        // float moveY = Input.GetAxisRaw("Vertical");
+        float moveY = 0f;
+
+        Vector2 movement = new Vector2(moveX, moveY).normalized;
+        _rb.linearVelocity = movement * moveSpeed;
     }
 }

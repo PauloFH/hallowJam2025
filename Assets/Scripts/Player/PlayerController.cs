@@ -7,10 +7,13 @@ public class PlayerController : MonoBehaviour {
 
     private Rigidbody2D _rb;
     private SpriteRenderer sr;
+    private AudioSource audioSource;
     private Vector2 _targetPosition;
     private bool _isMoving;
     private Camera _cam;
     private Animator animator;
+
+    public AudioClip[] footstepSounds;
 
     private InputAction _clickAction;
     private InputAction _pointAction;
@@ -28,6 +31,7 @@ public class PlayerController : MonoBehaviour {
     private void Awake() {
         _rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
         _cam = Camera.main;
         _clickAction = InputSystem.actions.FindAction("Click");
         _pointAction = InputSystem.actions.FindAction("Point");
@@ -101,7 +105,7 @@ public class PlayerController : MonoBehaviour {
             _isMoving = false;
             animator.SetBool("isMoving", false);
     }
-    
+
     private void KeyboardMovement()
     {
         float moveX = Input.GetAxisRaw("Horizontal");
@@ -119,11 +123,19 @@ public class PlayerController : MonoBehaviour {
             animator.SetBool("isMoving", true);
             sr.flipX = true;
         }
-        else {
+        else
+        {
             animator.SetBool("isMoving", false);
         }
 
         Vector2 movement = new Vector2(moveX, moveY).normalized;
         _rb.linearVelocity = movement * moveSpeed;
+    }
+    
+    public void PlayFootstepSound()
+    {
+        int random = Random.Range(0, footstepSounds.Length);
+        AudioClip clip = footstepSounds[random];
+        audioSource.PlayOneShot(clip);
     }
 }

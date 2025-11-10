@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour {
         }
             
 
-        MouseMovement();
+        // MouseMovement();
         KeyboardMovement();
     }
 

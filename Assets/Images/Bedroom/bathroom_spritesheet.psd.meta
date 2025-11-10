@@ -1,37 +1,46 @@
 fileFormatVersion: 2
-guid: 80555917e9e575645ab7f75b3eb9ea83
+guid: 889bc2fb7d6b1b049a0dc329056371a8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4035959289877228764
-    second: Walk_0
+      213: 3554073878358362343
+    second: bathroom_spritesheet_0
   - first:
-      213: -982904232830982447
-    second: Walk_1
+      213: -4596825857033007969
+    second: bathroom_spritesheet_1
   - first:
-      213: -350908408369970039
-    second: Walk_2
+      213: -1406958700807228261
+    second: bathroom_spritesheet_2
   - first:
-      213: -5409570386352685021
-    second: Walk_3
+      213: -5774174284982011247
+    second: bathroom_spritesheet_3
   - first:
-      213: 1553940418269799609
-    second: Walk_4
+      213: -8474959641986778123
+    second: bathroom_spritesheet_4
   - first:
-      213: 2416434504916517810
-    second: Walk_5
+      213: 745465025485334119
+    second: bathroom_spritesheet_5
   - first:
-      213: -6428935122508569504
-    second: Walk_6
+      213: 5691660298385289727
+    second: bathroom_spritesheet_6
   - first:
-      213: 7144598999076838305
-    second: Walk_7
+      213: -3066192636546997355
+    second: bathroom_spritesheet_7
   - first:
-      213: 7500509103958437945
-    second: Walk_8
+      213: -5609047794837175087
+    second: bathroom_spritesheet_8
   - first:
-      213: 1008816216748069464
-    second: Walk_9
+      213: 5366954273061466475
+    second: bathroom_spritesheet_9
+  - first:
+      213: 5887709016847108447
+    second: bathroom_spritesheet_10
+  - first:
+      213: -3053587966248006715
+    second: bathroom_spritesheet_11
+  - first:
+      213: -1259513521877969005
+    second: bathroom_spritesheet_12
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -78,7 +87,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -127,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Walk_0
+      name: bathroom_spritesheet_0
       rect:
         serializedVersion: 2
-        x: 47
-        y: 0
-        width: 35
-        height: 70
+        x: 43
+        y: 152
+        width: 207
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,20 +151,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cdce119379b920830800000000000000
-      internalID: 4035959289877228764
+      spriteID: 7e88b01bc5b925130800000000000000
+      internalID: 3554073878358362343
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_1
+      name: bathroom_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 172
-        y: 0
-        width: 39
-        height: 69
+        x: 19
+        y: 111
+        width: 25
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1d6a1e1dec50c52f0800000000000000
-      internalID: -982904232830982447
+      spriteID: f9c8731fc3bc430c0800000000000000
+      internalID: -4596825857033007969
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_2
+      name: bathroom_spritesheet_2
       rect:
         serializedVersion: 2
-        x: 301
-        y: 0
-        width: 33
-        height: 69
+        x: 54
+        y: 123
+        width: 12
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,20 +195,86 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 984096a69a2512bf0800000000000000
-      internalID: -350908408369970039
+      spriteID: b947db8148a797ce0800000000000000
+      internalID: -1406958700807228261
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_3
+      name: bathroom_spritesheet_3
       rect:
         serializedVersion: 2
-        x: 436
-        y: 0
+        x: 73
+        y: 121
+        width: 55
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19ab378a4130edfa0800000000000000
+      internalID: -5774174284982011247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 117
+        width: 28
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fb3b9d9b15e26a80800000000000000
+      internalID: -8474959641986778123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 117
+        width: 37
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 766e784bd7c685a00800000000000000
+      internalID: 745465025485334119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom_spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 119
         width: 20
-        height: 70
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +283,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 320c9fd05685de4b0800000000000000
-      internalID: -5409570386352685021
+      spriteID: ff1f27bb2e6dcfe40800000000000000
+      internalID: 5691660298385289727
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_4
+      name: bathroom_spritesheet_7
       rect:
         serializedVersion: 2
-        x: 566
-        y: 0
-        width: 27
-        height: 71
+        x: 240
+        y: 122
+        width: 12
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,20 +305,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9b4e719c394b09510800000000000000
-      internalID: 1553940418269799609
+      spriteID: 593a2bdda02b275d0800000000000000
+      internalID: -3066192636546997355
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_5
+      name: bathroom_spritesheet_8
       rect:
         serializedVersion: 2
-        x: 685
-        y: 0
-        width: 38
-        height: 70
+        x: 14
+        y: 33
+        width: 76
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,20 +327,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2b3cb802166e88120800000000000000
-      internalID: 2416434504916517810
+      spriteID: 1d4ca84afb8a822b0800000000000000
+      internalID: -5609047794837175087
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_6
+      name: bathroom_spritesheet_9
       rect:
         serializedVersion: 2
-        x: 812
-        y: 0
-        width: 38
-        height: 69
+        x: 120
+        y: 31
+        width: 26
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -274,20 +349,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 06428da6195d7c6a0800000000000000
-      internalID: -6428935122508569504
+      spriteID: b61f79bd9704b7a40800000000000000
+      internalID: 5366954273061466475
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_7
+      name: bathroom_spritesheet_10
       rect:
         serializedVersion: 2
-        x: 941
-        y: 0
-        width: 33
-        height: 69
+        x: 151
+        y: 31
+        width: 66
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -296,20 +371,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1ab169a9fe6b62360800000000000000
-      internalID: 7144598999076838305
+      spriteID: f59490a082855b150800000000000000
+      internalID: 5887709016847108447
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_8
+      name: bathroom_spritesheet_11
       rect:
         serializedVersion: 2
-        x: 1074
-        y: 0
+        x: 230
+        y: 31
         width: 23
-        height: 70
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,20 +393,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 930b6086a49271860800000000000000
-      internalID: 7500509103958437945
+      spriteID: 5cb416d5ce97f95d0800000000000000
+      internalID: -3053587966248006715
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_9
+      name: bathroom_spritesheet_12
       rect:
         serializedVersion: 2
-        x: 1201
-        y: 0
-        width: 32
-        height: 71
+        x: 26
+        y: 1
+        width: 227
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -340,8 +415,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8521ce21109000e00800000000000000
-      internalID: 1008816216748069464
+      spriteID: 39799a2002f458ee0800000000000000
+      internalID: -1259513521877969005
       vertices: []
       indices: 
       edges: []
@@ -360,16 +435,19 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Walk_0: 4035959289877228764
-      Walk_1: -982904232830982447
-      Walk_2: -350908408369970039
-      Walk_3: -5409570386352685021
-      Walk_4: 1553940418269799609
-      Walk_5: 2416434504916517810
-      Walk_6: -6428935122508569504
-      Walk_7: 7144598999076838305
-      Walk_8: 7500509103958437945
-      Walk_9: 1008816216748069464
+      bathroom_spritesheet_0: 3554073878358362343
+      bathroom_spritesheet_1: -4596825857033007969
+      bathroom_spritesheet_10: 5887709016847108447
+      bathroom_spritesheet_11: -3053587966248006715
+      bathroom_spritesheet_12: -1259513521877969005
+      bathroom_spritesheet_2: -1406958700807228261
+      bathroom_spritesheet_3: -5774174284982011247
+      bathroom_spritesheet_4: -8474959641986778123
+      bathroom_spritesheet_5: 745465025485334119
+      bathroom_spritesheet_6: 5691660298385289727
+      bathroom_spritesheet_7: -3066192636546997355
+      bathroom_spritesheet_8: -5609047794837175087
+      bathroom_spritesheet_9: 5366954273061466475
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

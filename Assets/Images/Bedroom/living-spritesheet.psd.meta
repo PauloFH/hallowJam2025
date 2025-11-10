@@ -1,0 +1,793 @@
+fileFormatVersion: 2
+guid: 5c525f38db31287489cacd83966be5a7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3433417001922821438
+    second: living-spritesheet_0
+  - first:
+      213: -8730416232888438855
+    second: living-spritesheet_1
+  - first:
+      213: 6319958739616705222
+    second: living-spritesheet_2
+  - first:
+      213: 4459523138569858670
+    second: living-spritesheet_3
+  - first:
+      213: -3388799520464637205
+    second: living-spritesheet_4
+  - first:
+      213: 1390132283117797917
+    second: living-spritesheet_5
+  - first:
+      213: 765887213264634516
+    second: living-spritesheet_6
+  - first:
+      213: -1998725530215763269
+    second: living-spritesheet_7
+  - first:
+      213: -5863111660888416164
+    second: living-spritesheet_8
+  - first:
+      213: -3278913684728134513
+    second: living-spritesheet_9
+  - first:
+      213: -3674206682838830859
+    second: living-spritesheet_10
+  - first:
+      213: -3152664539597186746
+    second: living-spritesheet_11
+  - first:
+      213: 846517292405777172
+    second: living-spritesheet_12
+  - first:
+      213: 79182160480246873
+    second: living-spritesheet_13
+  - first:
+      213: 8299923086556517503
+    second: living-spritesheet_14
+  - first:
+      213: 6635549233206624847
+    second: living-spritesheet_15
+  - first:
+      213: 5953929902204770019
+    second: living-spritesheet_16
+  - first:
+      213: -8948860375536205948
+    second: living-spritesheet_17
+  - first:
+      213: 3003533314229374548
+    second: living-spritesheet_18
+  - first:
+      213: -8124720463431621169
+    second: living-spritesheet_19
+  - first:
+      213: -4639637585809765573
+    second: living-spritesheet_20
+  - first:
+      213: -4751720913330316197
+    second: living-spritesheet_21
+  - first:
+      213: 3758961508853172864
+    second: living-spritesheet_22
+  - first:
+      213: -3141794972975338172
+    second: living-spritesheet_23
+  - first:
+      213: 4518336629033983007
+    second: living-spritesheet_24
+  - first:
+      213: 7019889736703932658
+    second: living-spritesheet_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: living-spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 359
+        width: 482
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3d756d7292f5af20800000000000000
+      internalID: 3433417001922821438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: living-spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 243
+        width: 14
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bf616121b457d680800000000000000
+      internalID: -8730416232888438855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: living-spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 273
+        width: 55
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6caaaf53df005b750800000000000000
+      internalID: 6319958739616705222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: living-spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 265
+        width: 40
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6e671ebaa863ed30800000000000000
+      internalID: 4459523138569858670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: living-spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 262
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be2f0bf6ac098f0d0800000000000000
+      internalID: -3388799520464637205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: living-spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 284
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d120a0e32fdba4310800000000000000
+      internalID: 1390132283117797917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: living-spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 271
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49207a4dc5af0aa00800000000000000
+      internalID: 765887213264634516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: living-spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 284
+        width: 27
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb23cff48b91344e0800000000000000
+      internalID: -1998725530215763269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: living-spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 260
+        width: 13
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c50ab4e220b02aea0800000000000000
+      internalID: -5863111660888416164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: living-spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 257
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f84cc9c4065fe72d0800000000000000
+      internalID: -3278913684728134513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: living-spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 265
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f0760e1d78920dc0800000000000000
+      internalID: -3674206682838830859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: living-spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 264
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 649d6550e4c7f34d0800000000000000
+      internalID: -3152664539597186746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: living-spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 147
+        width: 32
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 413621e0efe6fbb00800000000000000
+      internalID: 846517292405777172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: living-spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 211
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95c19f361cf491100800000000000000
+      internalID: 79182160480246873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: living-spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 209
+        width: 64
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f74d34582104f2370800000000000000
+      internalID: 8299923086556517503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: living-spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 210
+        width: 69
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4285e6fed4361c50800000000000000
+      internalID: 6635549233206624847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: living-spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 210
+        width: 25
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e6dd7663bb90a250800000000000000
+      internalID: 5953929902204770019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: living-spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 209
+        width: 24
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48f789bc6e24fc380800000000000000
+      internalID: -8948860375536205948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: living-spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 210
+        width: 23
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45e81b9c2a1bea920800000000000000
+      internalID: 3003533314229374548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: living-spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 209
+        width: 39
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc5afcdf8c13f3f80800000000000000
+      internalID: -8124720463431621169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: living-spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 139
+        width: 60
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3b02439232bc9fb0800000000000000
+      internalID: -4639637585809765573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: living-spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 142
+        width: 45
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5cd629410f7e0eb0800000000000000
+      internalID: -4751720913330316197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: living-spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 143
+        width: 45
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08a4f8393938a2430800000000000000
+      internalID: 3758961508853172864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: living-spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 150
+        width: 48
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44d62b63e1a1664d0800000000000000
+      internalID: -3141794972975338172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: living-spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 147
+        width: 100
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1cd435993b54be30800000000000000
+      internalID: 4518336629033983007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: living-spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 65
+        width: 511
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f8f5a6c588ab6160800000000000000
+      internalID: 7019889736703932658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      living-spritesheet_0: 3433417001922821438
+      living-spritesheet_1: -8730416232888438855
+      living-spritesheet_10: -3674206682838830859
+      living-spritesheet_11: -3152664539597186746
+      living-spritesheet_12: 846517292405777172
+      living-spritesheet_13: 79182160480246873
+      living-spritesheet_14: 8299923086556517503
+      living-spritesheet_15: 6635549233206624847
+      living-spritesheet_16: 5953929902204770019
+      living-spritesheet_17: -8948860375536205948
+      living-spritesheet_18: 3003533314229374548
+      living-spritesheet_19: -8124720463431621169
+      living-spritesheet_2: 6319958739616705222
+      living-spritesheet_20: -4639637585809765573
+      living-spritesheet_21: -4751720913330316197
+      living-spritesheet_22: 3758961508853172864
+      living-spritesheet_23: -3141794972975338172
+      living-spritesheet_24: 4518336629033983007
+      living-spritesheet_25: 7019889736703932658
+      living-spritesheet_3: 4459523138569858670
+      living-spritesheet_4: -3388799520464637205
+      living-spritesheet_5: 1390132283117797917
+      living-spritesheet_6: 765887213264634516
+      living-spritesheet_7: -1998725530215763269
+      living-spritesheet_8: -5863111660888416164
+      living-spritesheet_9: -3278913684728134513
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

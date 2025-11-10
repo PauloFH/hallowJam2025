@@ -9,12 +9,16 @@ public class InteractableObject : MonoBehaviour
     public float instabilityIncrease = 10f;
 
     private SpriteRenderer _sr;
+    private AudioSource _audioSource;
+    private Animator _animator;
     private Color _originalColor;
     private bool _hasInteracted;
 
     private void Start()
     {
         _sr = GetComponent<SpriteRenderer>();
+        _audioSource = GetComponent<AudioSource>();
+        _animator = GetComponent<Animator>();
         _originalColor = _sr.color;
     }
 
@@ -32,12 +36,21 @@ public class InteractableObject : MonoBehaviour
 
     public void OnClick()
     {
-        if (_hasInteracted) return;
+        // if (_hasInteracted) return;
 
-        _hasInteracted = true;
-        _sr.color = Color.gray;
+        // _hasInteracted = true;
+        // _sr.color = Color.gray;
 
+        _sr.color = _originalColor;
         DreamStabilityManager.Instance.AddInstability(instabilityIncrease);
         DialoguePanel.Instance.Show(title, description);
+        if (_audioSource != null)
+        {
+            _audioSource.Play();
+        }
+        if (_animator != null)
+        {
+            _animator.SetTrigger("Interact");
+        }
     }
 }

@@ -25,7 +25,7 @@ public class DreamStabilityManager : MonoBehaviour
     {
         if (instability > 0)
         {
-            var shakeAmount = Mathf.Clamp(instability / maxInstability, 0f, 0.05f);
+            var shakeAmount = instability / maxInstability * 0.05f;
             var shakePos = Random.insideUnitSphere * shakeAmount;
             shakePos.z = -10f;
             mainCamera.transform.localPosition = _originalCamPos + shakePos;

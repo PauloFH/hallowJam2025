@@ -112,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 7254945814738018398}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.4471726, y: 0.254, z: -1.1523879}
+  m_LocalPosition: {x: 0.348, y: 0.254, z: -1.1523879}
   m_LocalScale: {x: 0.115238786, y: 0.115238786, z: 0.115238786}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -404,8 +404,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 4
-  leftXBoundary: -6.23
-  rightXBoundary: 21.17
+  leftXBoundary: -5.68
+  rightXBoundary: 20.92
 --- !u!114 &4121633473587477062
 MonoBehaviour:
   m_ObjectHideFlags: 0

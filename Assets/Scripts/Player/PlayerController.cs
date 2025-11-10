@@ -6,12 +6,18 @@ public class PlayerController : MonoBehaviour {
     public float moveSpeed = 3f;
 
     private Rigidbody2D _rb;
+    private SpriteRenderer sr;
     private Vector2 _targetPosition;
     private bool _isMoving;
     private Camera _cam;
+    private Animator animator;
 
     private InputAction _clickAction;
     private InputAction _pointAction;
+
+    [Header("Boundaries")]
+    public float leftXBoundary = 0f;
+    public float rightXBoundary = 0f;
 
     public static bool IsInputBlocked = false;
 
@@ -21,9 +27,11 @@ public class PlayerController : MonoBehaviour {
 
     private void Awake() {
         _rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
         _cam = Camera.main;
         _clickAction = InputSystem.actions.FindAction("Click");
         _pointAction = InputSystem.actions.FindAction("Point");
+        animator = GetComponent<Animator>();
     }
 
     private void OnEnable() {
@@ -44,6 +52,18 @@ public class PlayerController : MonoBehaviour {
     {
         if (IsInputBlocked)
             return;
+
+        if (transform.position.x < leftXBoundary)
+        {
+            transform.position = new Vector2(leftXBoundary, transform.position.y);
+            return;
+        }
+        if (transform.position.x > rightXBoundary)
+        {
+            transform.position = new Vector2(rightXBoundary, transform.position.y);
+            return;
+        }
+            
 
         MouseMovement();
         KeyboardMovement();
@@ -70,6 +90,7 @@ public class PlayerController : MonoBehaviour {
 
             _targetPosition = new Vector2(mouseWorldPos.x, transform.position.y);
             _isMoving = true;
+            animator.SetBool("isMoving", true);
         }
 
         if (!_isMoving) return;
@@ -78,6 +99,7 @@ public class PlayerController : MonoBehaviour {
 
         if (Vector2.Distance(transform.position, _targetPosition) < 0.05f)
             _isMoving = false;
+            animator.SetBool("isMoving", false);
     }
     
     private void KeyboardMovement()
@@ -86,6 +108,20 @@ public class PlayerController : MonoBehaviour {
         // no jump
         // float moveY = Input.GetAxisRaw("Vertical");
         float moveY = 0f;
+
+        if (moveX > 0f)
+        {
+            animator.SetBool("isMoving", true);
+            sr.flipX = false;
+        }
+        else if (moveX < 0f)
+        {
+            animator.SetBool("isMoving", true);
+            sr.flipX = true;
+        }
+        else {
+            animator.SetBool("isMoving", false);
+        }
 
         Vector2 movement = new Vector2(moveX, moveY).normalized;
         _rb.linearVelocity = movement * moveSpeed;

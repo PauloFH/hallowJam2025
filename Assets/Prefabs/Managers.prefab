@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4516228927993340780}
   - component: {fileID: 1210812503379584079}
   - component: {fileID: 3616414058356501508}
+  - component: {fileID: 5307786671056454111}
   m_Layer: 0
   m_Name: Managers
   m_TagString: GameController
@@ -51,6 +52,7 @@ MonoBehaviour:
   instability: 0
   maxInstability: 100
   mainCamera: {fileID: 0}
+  heartbeat: {fileID: 8300000, guid: 0cfa8a3398cbaca4db0959721ef72b1a, type: 3}
 --- !u!114 &8207020843929491000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,6 +69,7 @@ MonoBehaviour:
   titleText: {fileID: 0}
   descriptionText: {fileID: 0}
   fadeDuration: 0.5
+  _canvasGroup: {fileID: 0}
 --- !u!114 &4516228927993340780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,6 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f3b6b9a1d7814a45a24a5b0e0b9f65e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HoverManager
+  _cam: {fileID: 0}
 --- !u!82 &1210812503379584079
 AudioSource:
   m_ObjectHideFlags: 0
@@ -273,3 +277,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5307786671056454111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5812144400540898446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb7c389b40a04c447a47df479c5961f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryManager

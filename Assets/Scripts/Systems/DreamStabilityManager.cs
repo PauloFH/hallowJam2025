@@ -14,6 +14,10 @@ public class DreamStabilityManager : MonoBehaviour
     private Vector3 _originalCamPos;
     private GameObject[] windows;
 
+    public AudioClip heartbeat;
+
+    private bool isHeartbeatPlaying = false;
+
     private bool hasBrokenWindows = false;
 
     private void Awake()
@@ -59,10 +63,22 @@ public class DreamStabilityManager : MonoBehaviour
             DistortAudio();
         }
 
-        if (instability >= 40f && !hasBrokenWindows)
+        if (instability >= 20f)
         {
-            BreakWindows();
-            hasBrokenWindows = true;
+            if (!isHeartbeatPlaying)
+            {
+                PlayHeartbeatSound();
+                isHeartbeatPlaying = true;
+            }
+        }
+
+        if (instability >= 40f)
+        {
+            if (!hasBrokenWindows)
+            {
+                BreakWindows();
+                hasBrokenWindows = true;
+            }
         }
 
         if (instability >= maxInstability)
@@ -108,6 +124,19 @@ public class DreamStabilityManager : MonoBehaviour
                     audioSource.Play();
                 }
             }
+        }
+    }
+
+    private void PlayHeartbeatSound()
+    {
+        var audioSource = GetComponent<AudioSource>();
+        if (audioSource != null && heartbeat != null)
+        {
+            audioSource.PlayOneShot(heartbeat);
+
+            var x = instability / maxInstability;
+            var delay = Mathf.Lerp(2f, 0.5f, (x - 0.1f) / (1f - 0.1f));
+            Invoke(nameof(PlayHeartbeatSound), delay);
         }
     }
 }

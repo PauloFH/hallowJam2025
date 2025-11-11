@@ -16,14 +16,17 @@ public class DialoguePanel : MonoBehaviour
     private bool _isVisible;
     private bool _isFading;
     private InputAction _clickAction;
-    private CanvasGroup _canvasGroup;
+    public CanvasGroup _canvasGroup;
 
     private void Awake()
     {
         Instance = this;
         _clickAction = InputSystem.actions.FindAction("Click");
         _clickAction?.Enable();
+    }
 
+    void Start()
+    {
         _canvasGroup = panel.GetComponent<CanvasGroup>();
         panel.SetActive(false);
         _canvasGroup.alpha = 0f;

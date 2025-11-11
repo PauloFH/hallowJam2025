@@ -1,93 +1,167 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour {
     public float moveSpeed = 3f;
 
     private Rigidbody2D _rb;
-    private Vector2 _targetPosition;
-    private bool _isMoving;
-    private Camera _cam;
+    private SpriteRenderer _sr;
+    private AudioSource _audioSource;
+    private Animator _animator;
 
-    private InputAction _clickAction;
-    private InputAction _pointAction;
+    public AudioClip[] footstepSounds;
+
+    [Header("Boundaries")]
+    public float leftXBoundary;
+    public float rightXBoundary;
 
     public static bool IsInputBlocked = false;
-
-    public void SetInputBlocked(bool blocked) {
-        IsInputBlocked = blocked;
-    }
-
+    private static readonly int IsMoving = Animator.StringToHash("isMoving");
+    public NextRoomUI nextRoomUI;
+    
+    private bool _atRightBoundary;
+    private bool _atLeftBoundary;
+    private bool _holdingTransition;
+    private float _holdTime;
+    public float requiredHoldTime = 1.5f;
+    public float boundaryTolerance = 0.05f; 
     private void Awake() {
         _rb = GetComponent<Rigidbody2D>();
-        _cam = Camera.main;
-        _clickAction = InputSystem.actions.FindAction("Click");
-        _pointAction = InputSystem.actions.FindAction("Point");
+        _sr = GetComponent<SpriteRenderer>();
+        _audioSource = GetComponent<AudioSource>();
+        _animator = GetComponent<Animator>();
     }
 
-    private void OnEnable() {
-        _clickAction?.Enable();
-        _pointAction?.Enable();
-    }
-
-    private void OnDisable() {
-        _clickAction?.Disable();
-        _pointAction?.Disable();
-    }
-
-    private void Start() {
-        _targetPosition = transform.position;
-    }
-
-    private void Update()
-    {
+    private void Update() {
         if (IsInputBlocked)
             return;
 
-        MouseMovement();
-        KeyboardMovement();
-    }
-
-    private void MouseMovement()
-    {
-        if (_clickAction != null && _clickAction.WasPressedThisFrame())
+        var moveX = Input.GetAxisRaw("Horizontal");
+        CheckBoundaries(moveX);
+        
+        if (_atRightBoundary)
         {
-            var mouseScreenPos = _pointAction.ReadValue<Vector2>();
-            Vector2 mouseWorldPos = _cam.ScreenToWorldPoint(mouseScreenPos);
-
-            var hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
-
-            if (hit.collider)
-            {
-                var interactable = hit.collider.GetComponent<InteractableObject>();
-                if (interactable)
-                {
-                    interactable.OnClick();
-                    return;
-                }
-            }
-
-            _targetPosition = new Vector2(mouseWorldPos.x, transform.position.y);
-            _isMoving = true;
+            nextRoomUI.ShowNextRoomHint(Vector2.right);
+        }
+        else if (_atLeftBoundary)
+        {
+            nextRoomUI.ShowNextRoomHint(Vector2.left);
+        }
+        else
+        {
+            nextRoomUI.Hide();
+            _holdTime = 0f;
         }
 
-        if (!_isMoving) return;
-        var step = moveSpeed * Time.deltaTime;
-        transform.position = Vector2.MoveTowards(transform.position, _targetPosition, step);
+        if (!_atRightBoundary && !_atLeftBoundary)
+        {
+            KeyboardMovement(moveX);
+        }
+        else
+        {
+            _rb.linearVelocity = Vector2.zero;
+            _animator.SetBool(IsMoving, false);
+        }
+        
+        if ((_atRightBoundary && moveX > 0) || (_atLeftBoundary && moveX < 0))
+        {
+            _holdingTransition = true;
+            _holdTime += Time.deltaTime;
+            nextRoomUI.UpdateProgress(_holdTime / requiredHoldTime);
 
-        if (Vector2.Distance(transform.position, _targetPosition) < 0.05f)
-            _isMoving = false;
+            if (!(_holdTime >= requiredHoldTime)) return;
+            _holdTime = 0f;
+            _holdingTransition = false;
+            IsInputBlocked = true;
+
+            var direction = _atRightBoundary ? 1 : -1;
+            StartCoroutine(SceneTransitionManager.Instance.TransitionToNextScene(direction));
+        }
+        else
+        {
+            if (_holdingTransition)
+            {
+                _holdingTransition = false;
+                StartCoroutine(nextRoomUI.AnimateCancel());
+            }
+            _holdTime = 0f;
+        }
     }
-    
-    private void KeyboardMovement()
-    {
-        float moveX = Input.GetAxisRaw("Horizontal");
-        // no jump
-        // float moveY = Input.GetAxisRaw("Vertical");
-        float moveY = 0f;
 
-        Vector2 movement = new Vector2(moveX, moveY).normalized;
+
+    private void KeyboardMovement(float moveX) {
+        const float moveY = 0f;
+
+        switch (moveX) {
+            case > 0f:
+                _animator.SetBool(IsMoving, true);
+                _sr.flipX = false;
+                break;
+            case < 0f:
+                _animator.SetBool(IsMoving, true);
+                _sr.flipX = true;
+                break;
+            default:
+                _animator.SetBool(IsMoving, false);
+                break;
+        }
+
+        var movement = new Vector2(moveX, moveY).normalized;
         _rb.linearVelocity = movement * moveSpeed;
     }
+
+    public void PlayFootstepSound() {
+        if (footstepSounds.Length == 0) return;
+        var random = Random.Range(0, footstepSounds.Length);
+        _audioSource.PlayOneShot(footstepSounds[random]);
+    }
+    
+    public void ResetBoundaryState()
+    {
+        _atLeftBoundary = false;
+        _atRightBoundary = false;
+        _holdingTransition = false;
+        _holdTime = 0f;
+        _rb.linearVelocity = Vector2.zero;
+        nextRoomUI.Hide();
+    }
+    private void CheckBoundaries(float moveX)
+    {
+        if (transform.position.x <= leftXBoundary + boundaryTolerance)
+        {
+            if (moveX < 0f)
+            {
+                transform.position = new Vector2(leftXBoundary, transform.position.y);
+                _rb.linearVelocity = Vector2.zero;
+                _atLeftBoundary = true;
+            }
+            else if (moveX > 0f)
+            {
+                _atLeftBoundary = false;
+            }
+        }
+        else
+        {
+            _atLeftBoundary = false;
+        }
+        
+        if (transform.position.x >= rightXBoundary - boundaryTolerance) {
+            switch (moveX) {
+                case > 0f:
+                    transform.position = new Vector2(rightXBoundary, transform.position.y);
+                    _rb.linearVelocity = Vector2.zero;
+                    _atRightBoundary = true;
+                    break;
+                case < 0f:
+                    _atRightBoundary = false;
+                    break;
+            }
+        }
+        else
+        {
+            _atRightBoundary = false;
+        }
+    }
+
 }

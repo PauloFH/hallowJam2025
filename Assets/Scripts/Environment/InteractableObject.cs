@@ -8,6 +8,10 @@ public class InteractableObject : MonoBehaviour
     [TextArea(2, 5)] public string description = "";
     public float instabilityIncrease = 10f;
 
+    private static int instanceCounter = 0;
+    private bool hasInstantiatedEffect = false;
+    private DreamStabilityManager dreamStabilityManager;
+
     private SpriteRenderer _sr;
     private AudioSource _audioSource;
     private Animator _animator;
@@ -20,6 +24,17 @@ public class InteractableObject : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
         _animator = GetComponent<Animator>();
         _originalColor = _sr.color;
+        dreamStabilityManager = DreamStabilityManager.Instance;
+    }
+
+    void Update()
+    {
+        if (dreamStabilityManager.instability >= 80f && instanceCounter < 100 && !hasInstantiatedEffect)
+        {
+            hasInstantiatedEffect = true;
+            instanceCounter++;
+            Instantiate(gameObject, new Vector3(transform.position.x + 0.6f, transform.position.y, transform.position.z), Quaternion.identity);
+        }
     }
 
     public void OnHoverEnter()

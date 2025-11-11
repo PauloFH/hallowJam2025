@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class HoverManager : MonoBehaviour {
-    private Camera _cam;
+    public Camera _cam;
     private InputAction _pointAction;
     private InputAction _clickAction;
 

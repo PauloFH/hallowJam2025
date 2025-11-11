@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
+using TMPro;
 
 public class SceneTransitionManager : MonoBehaviour
 {
@@ -14,7 +15,6 @@ public class SceneTransitionManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -33,7 +33,7 @@ public class SceneTransitionManager : MonoBehaviour
 
         var currentIndex = SceneManager.GetActiveScene().buildIndex;
         var nextIndex = currentIndex + direction;
-        
+
         if (nextIndex < 1)
         {
             yield return StartCoroutine(FadeIn());
@@ -43,7 +43,7 @@ public class SceneTransitionManager : MonoBehaviour
             PlayerController.IsInputBlocked = false;
             yield break;
         }
-        
+
         if (nextIndex >= SceneManager.sceneCountInBuildSettings)
             nextIndex = 0;
 

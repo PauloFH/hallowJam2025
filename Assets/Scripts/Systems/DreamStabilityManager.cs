@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,17 +12,42 @@ public class DreamStabilityManager : MonoBehaviour
     private AudioSource backgroundAudio;
 
     private Vector3 _originalCamPos;
+    private GameObject[] windows;
+
+    private bool hasBrokenWindows = false;
 
     private void Awake()
     {
-        if (Instance == null) Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
         else Destroy(gameObject);
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        windows = GameObject.FindGameObjectsWithTag("Window");
+        hasBrokenWindows = false;
+
+        mainCamera = Camera.main;
+        _originalCamPos = mainCamera.transform.localPosition;
+
+        var dialoguePanel = GetComponent<DialoguePanel>();
+        dialoguePanel.panel = GameObject.Find("DialoguePanel");
+        dialoguePanel._canvasGroup = dialoguePanel.panel.GetComponent<CanvasGroup>();
+        dialoguePanel.titleText = GameObject.Find("TitleText").GetComponent<TextMeshProUGUI>();
+        dialoguePanel.descriptionText = GameObject.Find("DescriptionText").GetComponent<TextMeshProUGUI>();
+        GetComponent<HoverManager>()._cam = mainCamera;
     }
 
     private void Start()
     {
         _originalCamPos = mainCamera.transform.localPosition;
         backgroundAudio = GetComponent<AudioSource>();
+        windows = GameObject.FindGameObjectsWithTag("Window");
     }
 
     private void Update()
@@ -31,6 +57,12 @@ public class DreamStabilityManager : MonoBehaviour
             ShakeCamera();
 
             DistortAudio();
+        }
+
+        if (instability >= 40f && !hasBrokenWindows)
+        {
+            BreakWindows();
+            hasBrokenWindows = true;
         }
 
         if (instability >= maxInstability)
@@ -44,12 +76,14 @@ public class DreamStabilityManager : MonoBehaviour
         instability = Mathf.Min(instability + value, maxInstability);
     }
 
-    private void ShakeCamera ()
+    private void ShakeCamera()
     {
-        var shakeAmount = instability / maxInstability * 0.05f;
-            var shakePos = Random.insideUnitSphere * shakeAmount;
-            shakePos.z = -10f;
-            mainCamera.transform.localPosition = _originalCamPos + shakePos;
+        float instabilityPercentage = instability / maxInstability;
+        float k = 1f;
+        var shakeAmount = Mathf.Log(1 + k * instabilityPercentage) / Mathf.Log(1 + k) * 0.05f;
+        var shakePos = Random.insideUnitSphere * shakeAmount;
+        shakePos.z = -10f;
+        mainCamera.transform.localPosition = _originalCamPos + shakePos;
     }
 
     private void DistortAudio()
@@ -57,6 +91,23 @@ public class DreamStabilityManager : MonoBehaviour
         if (backgroundAudio != null)
         {
             backgroundAudio.pitch = 1f + (instability / maxInstability);
+        }
+    }
+
+    private void BreakWindows()
+    {
+        foreach (var window in windows)
+        {
+            Animator windowAnimator = window.GetComponent<Animator>();
+            if (windowAnimator != null)
+            {
+                windowAnimator.SetBool("isBroken", true);
+                AudioSource audioSource = window.GetComponent<AudioSource>();
+                if (audioSource != null)
+                {
+                    audioSource.Play();
+                }
+            }
         }
     }
 }

@@ -1,0 +1,86 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System.Collections;
+
+public class SceneTransitionManager : MonoBehaviour
+{
+    public static SceneTransitionManager Instance;
+    public Image fadeImage;
+    public float fadeDuration = 1f;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void Start()
+    {
+        StartCoroutine(FadeIn());
+    }
+
+    public IEnumerator TransitionToNextScene(int direction)
+    {
+        yield return StartCoroutine(FadeOut());
+
+        var currentIndex = SceneManager.GetActiveScene().buildIndex;
+        var nextIndex = currentIndex + direction;
+        
+        if (nextIndex < 1)
+        {
+            yield return StartCoroutine(FadeIn());
+            var player = FindAnyObjectByType<PlayerController>();
+            if (player)
+                player.ResetBoundaryState();
+            PlayerController.IsInputBlocked = false;
+            yield break;
+        }
+        
+        if (nextIndex >= SceneManager.sceneCountInBuildSettings)
+            nextIndex = 0;
+
+        SceneManager.LoadScene(nextIndex);
+
+        yield return new WaitForSeconds(0.1f);
+        yield return StartCoroutine(FadeIn());
+        PlayerController.IsInputBlocked = false;
+    }
+
+
+    private IEnumerator FadeOut()
+    {
+        var elapsed = 0f;
+        var color = fadeImage.color;
+        while (elapsed < fadeDuration)
+        {
+            elapsed += Time.deltaTime;
+            color.a = Mathf.Clamp01(elapsed / fadeDuration);
+            fadeImage.color = color;
+            yield return null;
+        }
+    }
+
+    private IEnumerator FadeIn()
+    {
+        var elapsed = 0f;
+        var color = fadeImage.color;
+        while (elapsed < fadeDuration)
+        {
+            elapsed += Time.deltaTime;
+            color.a = 1f - Mathf.Clamp01(elapsed / fadeDuration);
+            fadeImage.color = color;
+            yield return null;
+        }
+
+        PlayerController.IsInputBlocked = false;
+    }
+
+}

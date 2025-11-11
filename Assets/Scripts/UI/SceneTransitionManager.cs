@@ -27,6 +27,11 @@ public class SceneTransitionManager : MonoBehaviour
         StartCoroutine(FadeIn());
     }
 
+    private void Nullify()
+    {
+        DialoguePanel.Instance = null;
+    }
+
     public IEnumerator TransitionToNextScene(int direction)
     {
         yield return StartCoroutine(FadeOut());
@@ -47,6 +52,7 @@ public class SceneTransitionManager : MonoBehaviour
         if (nextIndex >= SceneManager.sceneCountInBuildSettings)
             nextIndex = 0;
 
+        Nullify();
         SceneManager.LoadScene(nextIndex);
 
         yield return new WaitForSeconds(0.1f);
@@ -85,6 +91,7 @@ public class SceneTransitionManager : MonoBehaviour
     public IEnumerator TransitionToNextSceneByName(string sceneName)
     {
         yield return StartCoroutine(FadeOut());
+        Nullify();
         SceneManager.LoadScene(sceneName);
         yield return new WaitForSeconds(0.1f);
         yield return StartCoroutine(FadeIn());

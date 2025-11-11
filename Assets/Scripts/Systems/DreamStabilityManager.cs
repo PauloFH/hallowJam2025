@@ -45,6 +45,7 @@ public class DreamStabilityManager : MonoBehaviour
         dialoguePanel.titleText = GameObject.Find("TitleText").GetComponent<TextMeshProUGUI>();
         dialoguePanel.descriptionText = GameObject.Find("DescriptionText").GetComponent<TextMeshProUGUI>();
         GetComponent<HoverManager>()._cam = mainCamera;
+        print("DreamStabilityManager: Scene loaded and references updated.");
     }
 
     private void Start()
@@ -83,7 +84,7 @@ public class DreamStabilityManager : MonoBehaviour
 
         if (instability >= maxInstability)
         {
-            SceneManager.LoadScene("DreamCollape");
+            SceneManager.LoadScene("DreamCollapse");
         }
     }
 

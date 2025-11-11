@@ -29,6 +29,7 @@ public class InteractableObject : MonoBehaviour
     private Animator _animator;
     private Color _originalColor;
 
+    public bool hasInteractedOnce = false;
     private bool _hasInteracted;
     private bool _isOpened;
 
@@ -47,6 +48,11 @@ public class InteractableObject : MonoBehaviour
     }
 
     void Update()
+    {
+        GlitchEffect();
+    }
+
+    private void GlitchEffect()
     {
         if (dreamStabilityManager.instability >= 80f && instanceCounter < 100 && !hasInstantiatedEffect)
         {
@@ -73,8 +79,16 @@ public class InteractableObject : MonoBehaviour
     public void OnClick()
     {
         _sr.color = _originalColor;
-     
+
+        var computer = GetComponent<Computer>();
+        if (computer != null && hasInteractedOnce)
+        {
+            computer.ClickCallback();
+            return;
+        }
         
+        hasInteractedOnce = true;
+
         if (isCollectible)
         {
             HandleCollectible();

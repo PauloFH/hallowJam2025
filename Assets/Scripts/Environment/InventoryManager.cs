@@ -26,7 +26,7 @@ public class InventoryManager : MonoBehaviour
         if (!_items.Add(itemId)) return;
         Debug.Log($"[Inventário] Coletou: {itemId}");
         SaveInventory();
-        DialoguePanel.Instance.Show("Item Coletado", $"Você obteve: {itemId}");
+        // DialoguePanel.Instance.Show("Item Coletado", $"Você obteve: {itemId}");
     }
 
     public void RemoveItem(string itemId) {

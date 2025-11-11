@@ -23,7 +23,7 @@ public class Password : MonoBehaviour
         if (inputField.text.Length < 4)
             return;
 
-        string correctPassword = "1234";
+        string correctPassword = "0639";
         if (inputField.text.ToLower() == correctPassword)
         {
             Debug.Log("Password correct!");
@@ -39,6 +39,7 @@ public class Password : MonoBehaviour
             audioSource.PlayOneShot(incorrectSound);
             gameObject.SetActive(false);
         }
+        DreamStabilityManager.Instance.AddInstability(5f);
     }
     
     public void LogIn()

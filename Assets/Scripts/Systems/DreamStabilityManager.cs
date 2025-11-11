@@ -60,8 +60,6 @@ public class DreamStabilityManager : MonoBehaviour
     {
         if (instability > 0)
         {
-            ShakeCamera();
-
             DistortAudio();
         }
 
@@ -81,6 +79,8 @@ public class DreamStabilityManager : MonoBehaviour
                 BreakWindows();
                 hasBrokenWindows = true;
             }
+
+            ShakeCamera();
         }
 
         if (instability >= maxInstability)
@@ -96,7 +96,7 @@ public class DreamStabilityManager : MonoBehaviour
 
     private void ShakeCamera()
     {
-        float instabilityPercentage = instability / maxInstability;
+        float instabilityPercentage = (instability - 30) / maxInstability;
         float k = 1f;
         var shakeAmount = Mathf.Log(1 + k * instabilityPercentage) / Mathf.Log(1 + k) * 0.05f;
         var shakePos = Random.insideUnitSphere * shakeAmount;

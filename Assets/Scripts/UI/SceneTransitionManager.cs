@@ -82,5 +82,14 @@ public class SceneTransitionManager : MonoBehaviour
 
         PlayerController.IsInputBlocked = false;
     }
+    public IEnumerator TransitionToNextSceneByName(string sceneName)
+    {
+        yield return StartCoroutine(FadeOut());
+        SceneManager.LoadScene(sceneName);
+        yield return new WaitForSeconds(0.1f);
+        yield return StartCoroutine(FadeIn());
+        PlayerController.IsInputBlocked = false;
+    }
+
 
 }

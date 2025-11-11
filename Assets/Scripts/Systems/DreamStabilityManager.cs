@@ -40,6 +40,7 @@ public class DreamStabilityManager : MonoBehaviour
         _originalCamPos = mainCamera.transform.localPosition;
 
         var dialoguePanel = GetComponent<DialoguePanel>();
+        DialoguePanel.Instance = dialoguePanel;
         dialoguePanel.panel = GameObject.Find("DialoguePanel");
         dialoguePanel._canvasGroup = dialoguePanel.panel.GetComponent<CanvasGroup>();
         dialoguePanel.titleText = GameObject.Find("TitleText").GetComponent<TextMeshProUGUI>();

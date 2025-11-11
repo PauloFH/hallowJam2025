@@ -7,4 +7,5 @@ public class GameDataReset : MonoBehaviour
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
     }
+    
 }

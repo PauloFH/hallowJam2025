@@ -419,12 +419,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "A luz do porao se apaga.\r\nPor um instante, o silencio e absoluto.\r\nQuando
-    voce abre os olhos, esta de volta a cama.\nO mesmo quarto, o mesmo som do relogio.\r\nNada
-    mudou\u2026\r\n"
+  m_text: "A luz do por\xE3o se apaga.\r\nPor um instante, o sil\xEAncio \xE9 absoluto.\r\nQuando
+    voc\xEA abre os olhos, est\xE1 de volta a cama.\nO mesmo quarto, o mesmo som
+    do rel\xF3gio.\r\nNada mudou\u2026\r\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
-  m_sharedMaterial: {fileID: 1260715531048141648, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

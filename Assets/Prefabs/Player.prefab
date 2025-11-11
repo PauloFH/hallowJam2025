@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7177193970910882111}
   - component: {fileID: 829521372224031668}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Spot Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8744173909544074482}
   - component: {fileID: 7218555254065022251}
   - component: {fileID: 4296838723991597287}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -238,9 +238,9 @@ GameObject:
   - component: {fileID: 4121633473587477062}
   - component: {fileID: 2084073196628000991}
   - component: {fileID: 1029568026203028746}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

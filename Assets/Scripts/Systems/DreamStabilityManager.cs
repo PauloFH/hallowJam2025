@@ -35,7 +35,7 @@ public class DreamStabilityManager : MonoBehaviour
 
         if (instability >= maxInstability)
         {
-            SceneManager.LoadScene("DreamCollapse");
+            SceneManager.LoadScene("DreamCollape");
         }
     }
 
